@@ -1,0 +1,88 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake & PowerShell: Build Project",
+            "detail": "Uses a PwSh script to execute cmake build command",
+            "type": "shell",
+            "command": "${workspaceFolder}\\scripts\\build.ps1",
+            "problemMatcher": ["$msCompile"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "panel": "dedicated",
+                "revealProblems": "never",
+                "reveal": "always",
+                "clear": true,
+                "preserveTerminalName": true,
+                "showReuseMessage": false
+            },
+            "icon": {
+                "color": "terminal.ansiCyan",
+                "id": "tools"
+            }
+        },
+        {
+            "label": "CMake & PowerShell: Configure Project",
+            "detail": "Initializes CMake using the correct config for the `cmd-lib` project.",
+            "type": "shell",
+            "command": "${workspaceFolder}\\scripts\\config.ps1",
+            "problemMatcher": [],
+            "group": "none",
+            "presentation": {
+                "panel": "dedicated",
+                "revealProblems": "onProblem",
+                "reveal": "always",
+                "clear": true,
+                "preserveTerminalName": true,
+                "showReuseMessage": false
+            },
+            "icon": {
+                "color": "terminal.ansiMagenta",
+                "id": "settings-gear"
+            }
+        },
+        {
+            "label": "PowerShell: Execute dot-exe Binary (takes args)",
+            "detail": "Execute Project Binary CLI",
+            "type": "shell",
+            "command": "${workspaceFolder}\\scripts\\run.ps1",
+            "args": ["${input:cli_args}"],
+            "problemMatcher": [],
+            "group": "none",
+            "presentation": {
+                "panel": "new",
+                "reveal": "always",
+                "clear": true,
+                "close": false,
+                "preserveTerminalName": true,
+                "showReuseMessage": false,
+                "echo": true
+            },
+            "icon": {
+                "color": "terminal.ansiGreen",
+                "id": "play"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "cli_args",
+            "type": "promptString",
+            "description": "Arguments for JsonAnalyzer CLI",
+            "default": "--info"
+        }
+    ],
+    "windows": {
+        "options": {
+            "cwd": "C:\\DEV\\Repos\\Objective-Commander"
+        }
+    },
+    "linux": {
+        "options": {
+            "cwd": "/home/user/ajay/DEV/Repos/Objective-Commander"
+        }
+    }
+}

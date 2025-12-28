@@ -1,41 +1,16 @@
-# Prerequisites
-*.d
+# Generated Files
+build/*
+.temp/
+compile_commands.json
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# CLang GeneratedFiles
+*/clangd/
+*/.cache/
+.clang-format
+.clang-tidy
+.clangd
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# debug information files
-*.dwo
+# VSC & VSC Extension Config Files
+.vscode/launch.json
+.vscode/settings.json
+*/cspell.json
